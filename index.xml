@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>naomo</title>
+    <link>https://naomo.jp/</link>
+    <description>Recent content on naomo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 25 Jun 2021 22:13:29 +0900</lastBuildDate><atom:link href="https://naomo.jp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>テスト投稿</title>
+      <link>https://naomo.jp/posts/20210625/</link>
+      <pubDate>Fri, 25 Jun 2021 22:13:29 +0900</pubDate>
+      
+      <guid>https://naomo.jp/posts/20210625/</guid>
+      <description>これはテストの投稿です。 krzmknt.github.io のリポジトリを空にしました。</description>
+    </item>
+    
+    <item>
+      <title>SCSS の扱い方を忘れたのでメモしておく</title>
+      <link>https://naomo.jp/posts/hot-to-write-sass/</link>
+      <pubDate>Thu, 18 Mar 2021 22:13:29 +0900</pubDate>
+      
+      <guid>https://naomo.jp/posts/hot-to-write-sass/</guid>
+      <description>SCSS とは ボトムアップに CSS -&amp;gt; Sass -&amp;gt; SCSS の順に説明する。
+CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。
+Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。
+SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。
+導入 環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)
+次の通りsass -v が通るので既にインストールされているよう。
+$sass -v Ruby Sass 3.7.4 $gem list sass (3.7.4, 3.4.25) sass-listen (4.0.0) しかし公式曰く Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。
+homebrew で Dart Sass をインストール。</description>
+    </item>
+    
+    <item>
+      <title>はじめに</title>
+      <link>https://naomo.jp/posts/my-first-post/</link>
+      <pubDate>Fri, 19 Feb 2021 21:29:01 +0900</pubDate>
+      
+      <guid>https://naomo.jp/posts/my-first-post/</guid>
+      <description>ブログを始めた
+構成  SSG: Hugo  「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた  静的サイトジェネレーター Gatsby - Qiita はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした hugo new site naomo hugo new posts 20210220.md hugo の3コマンドで ./public に公開するファイルが作成される  あとはこれをデプロイするだけなのでシンプル     Theme: hugo-tanaka  シンプルでスッキリしている     ホスティング: GitHub Pages  public 下を github.com/username/username.github.io に配置するだけで公開   ドメイン取得: お名前.com DNS: Cloud Flare  CI  CircleCi  CIサービス初めて使った CIとは、コミットをトリガーとしてビルド、テストを自動で行うことを指す模様 今回はコミットをトリガーとして Hugo のビルドと Github Pagesへのデプロイを自動で行うようにした  「Hugo CircleCi」 とか検索すればブログ記事がいくつも見つかる   参考 Hugo, Github Pages, CircleCIつかってブログ構築 • abekoh&amp;rsquo;s tech note .</description>
+    </item>
+    
+  </channel>
+</rss>

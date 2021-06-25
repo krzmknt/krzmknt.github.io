@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> SCSS の扱い方を忘れたのでメモしておく - naomo </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="naomo" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://naomo.jp/posts/hot-to-write-sass/" />
+    <meta property="og:title" content="SCSS の扱い方を忘れたのでメモしておく" />
+    <meta property="og:image" content="https://naomo.jp/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="SCSS の扱い方を忘れたのでメモしておく" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://naomo.jp/" />
+
+    <link rel="canonical" href="https://naomo.jp/posts/hot-to-write-sass/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://naomo.jp/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://naomo.jp/images/favicon.png">
+
+    
+    <link href="https://naomo.jp/index.xml" rel="alternate" type="application/rss+xml" title="naomo" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://naomo.jp/">
+                    <h1 class="name">naomo</h1>
+                </a>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://naomo.jp/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com/mchiete">
+                        
+                        Twitter
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://naomo.jp/index.xml">
+                        
+                        RSS
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">SCSS の扱い方を忘れたのでメモしておく</h1>
+                    <div class="markdown">
+                        
+    <br>
+<h3 id="scss-とは">SCSS とは</h3>
+<p>ボトムアップに CSS -&gt; Sass -&gt; SCSS の順に説明する。</p>
+<p>CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(<a href="https://tools.ietf.org/html/rfc2318">RFC2318</a>)。</p>
+<p>Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。</p>
+<p>SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。</p>
+<br>
+<h3 id="導入">導入</h3>
+<p>環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)</p>
+<p>次の通り<code>sass -v</code> が通るので既にインストールされているよう。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$sass -v
+Ruby Sass 3.7.4
+$gem list
+sass (3.7.4, 3.4.25)
+sass-listen (4.0.0)
+</code></pre></div><p>しかし<a href="https://sass-lang.com/ruby-sass">公式曰く</a> Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。</p>
+<p>homebrew で <a href="https://sass-lang.com/dart-sass">Dart Sass</a> をインストール。</p>
+<pre><code>$brew install sass/sass/sass
+$sass --version
+1.32.8
+</code></pre><br>
+<h3 id="使用">使用</h3>
+<p>次の <code>input.scss</code> を <code>sass --style expanded input.scss:output.css</code> でコンパイル。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#00f">@use</span> <span style="color:#a31515">&#39;nomargin&#39;</span>;
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+<span style="color:#00f">@mixin</span> transform($property) {
+  -webkit-transform: <span style="">$</span>property;
+  -ms-transform: <span style="">$</span>property;
+  transform: <span style="">$</span>property;
+}
+
+body {
+	font: 100<span style="">%</span> <span style="">$</span>font-stack;
+	color: <span style="">$</span>primary-color;
+	width: 600px/900px * 100<span style="">%</span>;
+	a{text-decoration:none}
+  <span style="color:#2b91af">.box</span> { <span style="color:#00f">@include</span> transform(rotate(30<span style="color:#2b91af">deg</span>)); }
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#008000">// _nomargin.scss
+</span><span style="color:#008000"></span>
+* {
+	margin:0;
+}
+</code></pre></div><p>次の <code>output.css</code> を得た。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">* {
+  <span style="color:#00f">margin</span>: 0;
+}
+
+body {
+  <span style="color:#00f">font</span>: 100<span style="color:#2b91af">%</span> Helvetica, <span style="color:#00f">sans-serif</span>;
+  <span style="color:#00f">color</span>: #333;
+  <span style="color:#00f">width</span>: 66.6666666667<span style="color:#2b91af">%</span>;
+}
+body a {
+  <span style="color:#00f">text-decoration</span>: <span style="color:#00f">none</span>;
+}
+body .<span style="color:#2b91af">box</span> {
+  <span style="color:#00f">-webkit-</span><span style="color:#00f">transform</span>: rotate(30<span style="color:#2b91af">deg</span>);
+  <span style="color:#00f">-ms-</span><span style="color:#00f">transform</span>: rotate(30<span style="color:#2b91af">deg</span>);
+  <span style="color:#00f">transform</span>: rotate(30<span style="color:#2b91af">deg</span>);
+}
+
+<span style="color:#008000">/*# sourceMappingURL=output.css.map */</span>
+</code></pre></div><br>
+<h3 id="scss-のおもしろいコードとか-sass-との違いとか">scss のおもしろいコードとか sass との違いとか</h3>
+<p>また次の機会に。</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+<script src="https://naomo.jp/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+</body>
+
+</html>

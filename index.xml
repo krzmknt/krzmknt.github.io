@@ -14,43 +14,25 @@
       <pubDate>Sun, 03 Oct 2021 02:33:43 +0900</pubDate>
       
       <guid>https://naomo.jp/posts/20211003_tmux-cheetsheet/</guid>
-      <description>Install $ sudo apt install tmux # sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
+      <description>Install $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
     </item>
     
     <item>
-      <title>テスト投稿</title>
-      <link>https://naomo.jp/posts/20210625/</link>
-      <pubDate>Fri, 25 Jun 2021 22:13:29 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/20210625/</guid>
-      <description>これはテストの投稿です。 krzmknt.github.io のリポジトリを空にしました。</description>
-    </item>
-    
-    <item>
-      <title>SCSS の扱い方を忘れたのでメモしておく</title>
+      <title>scss: how to use</title>
       <link>https://naomo.jp/posts/hot-to-write-sass/</link>
       <pubDate>Thu, 18 Mar 2021 22:13:29 +0900</pubDate>
       
       <guid>https://naomo.jp/posts/hot-to-write-sass/</guid>
-      <description>SCSS とは ボトムアップに CSS -&amp;gt; Sass -&amp;gt; SCSS の順に説明する。
-CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。
-Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。
-SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。
-導入 環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)
-次の通りsass -v が通るので既にインストールされているよう。
-$sass -v Ruby Sass 3.7.4 $gem list sass (3.7.4, 3.4.25) sass-listen (4.0.0) しかし公式曰く Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。
-homebrew で Dart Sass をインストール。
-$brew install sass/sass/sass $sass --version 1.</description>
+      <description>What is SCSS  CSS -&amp;gt; Sass -&amp;gt; SCSS  CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。 Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。 SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。    Install  Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020) The command sass -v can go though. Is seems that it had already been installed.  $sass -v Ruby Sass 3.</description>
     </item>
     
     <item>
-      <title>はじめに</title>
+      <title>naomo: construction</title>
       <link>https://naomo.jp/posts/my-first-post/</link>
       <pubDate>Fri, 19 Feb 2021 21:29:01 +0900</pubDate>
       
       <guid>https://naomo.jp/posts/my-first-post/</guid>
-      <description>ブログを始めた
-構成  SSG: Hugo  「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた  静的サイトジェネレーター Gatsby - Qiita はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした hugo new site naomo hugo new posts 20210220.md hugo の3コマンドで ./public に公開するファイルが作成される  あとはこれをデプロイするだけなのでシンプル     Theme: hugo-tanaka  シンプルでスッキリしている     ホスティング: GitHub Pages  public 下を github.com/username/username.github.io に配置するだけで公開   ドメイン取得: お名前.com DNS: Cloud Flare  CI  CircleCi  CIサービス初めて使った CIとは、コミットをトリガーとしてビルド、テストを自動で行うことを指す模様 今回はコミットをトリガーとして Hugo のビルドと Github Pagesへのデプロイを自動で行うようにした  「Hugo CircleCi」 とか検索すればブログ記事がいくつも見つかる   参考 Hugo, Github Pages, CircleCIつかってブログ構築 • abekoh&amp;rsquo;s tech note .</description>
+      <description>I have started a blog (this site)  construction  SSG: Hugo  「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた  静的サイトジェネレーター Gatsby - Qiita はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした hugo new site naomo hugo new posts 20210220.md hugo の3コマンドで ./public に公開するファイルが作成される   theme: hugo-tanaka  simple theme but, now (20211003) hello-friend-ng.     Hosting: GitHub Pages  The site is published only with deploying &amp;lsquo;public&amp;rsquo; to github.com/username/username.github.io   Buying the domain: onamae.</description>
     </item>
     
   </channel>

@@ -15,12 +15,12 @@
             <pubDate>Sun, 03 Oct 2021 02:33:43 +0900</pubDate>
             
             <guid>https://naomo.jp/posts/20211003_tmux-cheetsheet/</guid>
-            <description>Install $ sudo apt install tmux # sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
+            <description>Install $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
             <content type="html"><![CDATA[<h2 id="install">Install</h2>
-<pre tabindex="0"><code>$ sudo apt install tmux
-# sudo yum install tmux
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ sudo apt install tmux
+$ sudo yum install tmux
 $ brew install tmux
-</code></pre><h2 id="architecture">Architecture</h2>
+</code></pre></div><h2 id="architecture">Architecture</h2>
 <ul>
 <li>tmux
 <ul>
@@ -157,48 +157,33 @@ $ brew install tmux
         </item>
         
         <item>
-            <title>テスト投稿</title>
-            <link>https://naomo.jp/posts/20210625/</link>
-            <pubDate>Fri, 25 Jun 2021 22:13:29 +0900</pubDate>
-            
-            <guid>https://naomo.jp/posts/20210625/</guid>
-            <description>これはテストの投稿です。 krzmknt.github.io のリポジトリを空にしました。</description>
-            <content type="html"><![CDATA[<p>これはテストの投稿です。
-krzmknt.github.io のリポジトリを空にしました。</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>SCSS の扱い方を忘れたのでメモしておく</title>
+            <title>scss: how to use</title>
             <link>https://naomo.jp/posts/hot-to-write-sass/</link>
             <pubDate>Thu, 18 Mar 2021 22:13:29 +0900</pubDate>
             
             <guid>https://naomo.jp/posts/hot-to-write-sass/</guid>
-            <description>SCSS とは ボトムアップに CSS -&amp;gt; Sass -&amp;gt; SCSS の順に説明する。
-CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。
-Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。
-SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。
-導入 環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)
-次の通りsass -v が通るので既にインストールされているよう。
-$sass -v Ruby Sass 3.7.4 $gem list sass (3.7.4, 3.4.25) sass-listen (4.0.0) しかし公式曰く Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。
-homebrew で Dart Sass をインストール。
-$brew install sass/sass/sass $sass --version 1.</description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
-<h3 id="scss-とは">SCSS とは</h3>
-<p>ボトムアップに CSS -&gt; Sass -&gt; SCSS の順に説明する。</p>
-<p>CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(<a href="https://tools.ietf.org/html/rfc2318">RFC2318</a>)。</p>
-<p>Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。</p>
-<p>SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。</p>
-<!-- raw HTML omitted -->
-<h3 id="導入">導入</h3>
-<p>環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)</p>
-<p>次の通り<code>sass -v</code> が通るので既にインストールされているよう。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$sass -v
+            <description>What is SCSS  CSS -&amp;gt; Sass -&amp;gt; SCSS  CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。 Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。 SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。    Install  Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020) The command sass -v can go though. Is seems that it had already been installed.  $sass -v Ruby Sass 3.</description>
+            <content type="html"><![CDATA[<h2 id="what-is-scss">What is SCSS</h2>
+<ul>
+<li>CSS -&gt; Sass -&gt; SCSS
+<ul>
+<li>CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(<a href="https://tools.ietf.org/html/rfc2318">RFC2318</a>)。</li>
+<li>Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。</li>
+<li>SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。</li>
+</ul>
+</li>
+</ul>
+<h2 id="install">Install</h2>
+<ul>
+<li>Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)</li>
+<li>The command <code>sass -v</code> can go though. Is seems that it had already been installed.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$sass -v
 Ruby Sass 3.7.4
 $gem list
 sass <span style="color:#f92672">(</span>3.7.4, 3.4.25<span style="color:#f92672">)</span>
 sass-listen <span style="color:#f92672">(</span>4.0.0<span style="color:#f92672">)</span>
-</code></pre></div><p>しかし<a href="https://sass-lang.com/ruby-sass">公式曰く</a> Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。</p>
+</code></pre></div><p>However, <a href="https://sass-lang.com/ruby-sass">official says</a> Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。</p>
 <p>homebrew で <a href="https://sass-lang.com/dart-sass">Dart Sass</a> をインストール。</p>
 <pre tabindex="0"><code>$brew install sass/sass/sass
 $sass --version
@@ -256,17 +241,16 @@ $primary-color<span style="color:#f92672">:</span> <span style="color:#ae81ff">#
         </item>
         
         <item>
-            <title>はじめに</title>
+            <title>naomo: construction</title>
             <link>https://naomo.jp/posts/my-first-post/</link>
             <pubDate>Fri, 19 Feb 2021 21:29:01 +0900</pubDate>
             
             <guid>https://naomo.jp/posts/my-first-post/</guid>
-            <description>ブログを始めた
-構成  SSG: Hugo  「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた  静的サイトジェネレーター Gatsby - Qiita はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした hugo new site naomo hugo new posts 20210220.md hugo の3コマンドで ./public に公開するファイルが作成される  あとはこれをデプロイするだけなのでシンプル     Theme: hugo-tanaka  シンプルでスッキリしている     ホスティング: GitHub Pages  public 下を github.com/username/username.github.io に配置するだけで公開   ドメイン取得: お名前.com DNS: Cloud Flare  CI  CircleCi  CIサービス初めて使った CIとは、コミットをトリガーとしてビルド、テストを自動で行うことを指す模様 今回はコミットをトリガーとして Hugo のビルドと Github Pagesへのデプロイを自動で行うようにした  「Hugo CircleCi」 とか検索すればブログ記事がいくつも見つかる   参考 Hugo, Github Pages, CircleCIつかってブログ構築 • abekoh&amp;rsquo;s tech note .</description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
-<p>ブログを始めた</p>
-<!-- raw HTML omitted -->
-<h2 id="構成">構成</h2>
+            <description>I have started a blog (this site)  construction  SSG: Hugo  「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた  静的サイトジェネレーター Gatsby - Qiita はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした hugo new site naomo hugo new posts 20210220.md hugo の3コマンドで ./public に公開するファイルが作成される   theme: hugo-tanaka  simple theme but, now (20211003) hello-friend-ng.     Hosting: GitHub Pages  The site is published only with deploying &amp;lsquo;public&amp;rsquo; to github.com/username/username.github.io   Buying the domain: onamae.</description>
+            <content type="html"><![CDATA[<ul>
+<li>I have started a blog (this site)</li>
+</ul>
+<h2 id="construction">construction</h2>
 <ul>
 <li>SSG: <a href="https://gohugo.io/">Hugo</a>
 <ul>
@@ -274,46 +258,39 @@ $primary-color<span style="color:#f92672">:</span> <span style="color:#ae81ff">#
 <ul>
 <li><a href="https://qiita.com/umamichi/items/9bd08a21fddc71588efc">静的サイトジェネレーター Gatsby - Qiita</a></li>
 <li>はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした</li>
-<li><code>hugo new site naomo</code> <code>hugo new posts 20210220.md</code> <code>hugo</code> の3コマンドで <code>./public</code> に公開するファイルが作成される
+<li><code>hugo new site naomo</code> <code>hugo new posts 20210220.md</code> <code>hugo</code> の3コマンドで <code>./public</code> に公開するファイルが作成される</li>
+</ul>
+</li>
+<li>theme: <a href="https://github.com/nanxstats/hugo-tanka">hugo-tanaka</a>
 <ul>
-<li>あとはこれをデプロイするだけなのでシンプル</li>
+<li>simple theme</li>
+<li>but, now (20211003) hello-friend-ng.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Theme: <a href="https://github.com/nanxstats/hugo-tanka">hugo-tanaka</a>
+<li>Hosting: <a href="https://docs.github.com/ja/github/working-with-github-pages/about-github-pages">GitHub Pages</a>
 <ul>
-<li>シンプルでスッキリしている</li>
+<li>The site is published only with deploying &lsquo;public&rsquo; to github.com/username/username.github.io</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>ホスティング: <a href="https://docs.github.com/ja/github/working-with-github-pages/about-github-pages">GitHub Pages</a>
-<ul>
-<li><code>public</code> 下を github.com/username/username.github.io に配置するだけで公開</li>
-</ul>
-</li>
-<li>ドメイン取得: <a href="https://www.onamae.com/">お名前.com</a></li>
+<li>Buying the domain: <a href="https://www.onamae.com/">onamae.com</a></li>
 <li>DNS: <a href="https://dash.cloudflare.com/">Cloud Flare</a></li>
 </ul>
-<!-- raw HTML omitted -->
-<h2 id="ci">CI</h2>
+<h2 id="cicd">CI/CD</h2>
 <ul>
 <li><a href="https://app.circleci.com/">CircleCi</a>
 <ul>
 <li>CIサービス初めて使った</li>
 <li>CIとは、コミットをトリガーとしてビルド、テストを自動で行うことを指す模様</li>
-<li>今回はコミットをトリガーとして Hugo のビルドと Github Pagesへのデプロイを自動で行うようにした
-<ul>
-<li>「Hugo CircleCi」 とか検索すればブログ記事がいくつも見つかる</li>
-</ul>
-</li>
-<li>参考 <a href="https://blog.abekoh.dev/post/how-to-build-this-blog/">Hugo, Github Pages, CircleCIつかってブログ構築 • abekoh&rsquo;s tech note</a></li>
-<li><code>.circleci/config.yml</code></li>
+<li>今回はコミットをトリガーとして Hugo のビルドと Github Pagesへのデプロイを自動で行うようにした</li>
+<li>「Hugo CircleCi」 とか検索すればブログ記事がいくつも見つかる
+参考 <a href="https://blog.abekoh.dev/post/how-to-build-this-blog/">Hugo, Github Pages, CircleCIつかってブログ構築 • abekoh&rsquo;s tech note</a>
+<code>.circleci/config.yml</code></li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.circleci/config.yml" data-lang=".circleci/config.yml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
 <span style="color:#f92672">orbs</span>:
   <span style="color:#f92672">hugo</span>: <span style="color:#ae81ff">circleci/hugo@0.4.1</span>
   <span style="color:#f92672">slack</span>: <span style="color:#ae81ff">circleci/slack@4.3.0</span>

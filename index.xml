@@ -6,7 +6,16 @@
     <description>Recent content on naomo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 25 Jun 2021 22:13:29 +0900</lastBuildDate><atom:link href="https://naomo.jp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Oct 2021 02:33:43 +0900</lastBuildDate><atom:link href="https://naomo.jp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tmux ceetsheet</title>
+      <link>https://naomo.jp/posts/20211003_tmux-cheetsheet/</link>
+      <pubDate>Sun, 03 Oct 2021 02:33:43 +0900</pubDate>
+      
+      <guid>https://naomo.jp/posts/20211003_tmux-cheetsheet/</guid>
+      <description>Install $ sudo apt install tmux # sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
+    </item>
+    
     <item>
       <title>テスト投稿</title>
       <link>https://naomo.jp/posts/20210625/</link>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Posts - naomo </title>
+    <title> tmux ceetsheet - naomo </title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="referrer" content="no-referrer">
@@ -12,18 +12,18 @@
     <meta property="og:site_name" content="naomo" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://naomo.jp/posts/" />
-    <meta property="og:title" content="Posts" />
+    <meta property="og:url" content="https://naomo.jp/posts/20211003_tmux-cheetsheet/" />
+    <meta property="og:title" content="tmux ceetsheet" />
     <meta property="og:image" content="https://naomo.jp/" />
     <meta property="og:description" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
     
-    <meta name="twitter:title" content="Posts" />
+    <meta name="twitter:title" content="tmux ceetsheet" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="https://naomo.jp/" />
 
-    <link rel="canonical" href="https://naomo.jp/posts/">
+    <link rel="canonical" href="https://naomo.jp/posts/20211003_tmux-cheetsheet/">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
 
@@ -88,40 +88,170 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">tmux ceetsheet</h1>
                     <div class="markdown">
                         
-    
+    <h2 id="install">Install</h2>
+<pre tabindex="0"><code>$ sudo apt install tmux
+# sudo yum install tmux
+$ brew install tmux
+</code></pre><h2 id="architecture">Architecture</h2>
+<ul>
+<li>tmux
+<ul>
+<li>Session
+<ul>
+<li>Window
+<ul>
+<li>Pain</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="commands">Commands</h2>
+<h3 id="session">Session</h3>
+<ul>
+<li>Make
+<ul>
+<li>tmux new|new-session [-s <name>]</li>
+<li>:new
+<ul>
+<li>Start a new session.</li>
+<li>If you don&rsquo;t give any option, subcommand &lsquo;new|new-session&rsquo; can be omitted.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attach
+<ul>
+<li>tmux a [-t <name>]
+<ul>
+<li>Attach to last session</li>
+<li>With the option -t, attach to a session with the name <name>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Kill
+<ul>
+<li>tmux kill-ses [-t <name>]
+<ul>
+<li>Kill the lru session.</li>
+<li>With option -t, you can specify a session.</li>
+</ul>
+</li>
+<li>tmux kill-server
+<ul>
+<li>Kill the all sessions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rename
+<ul>
+<li>C-b+$, :rename-session <name> : Chage the session name</li>
+<li>tmux rename -t <old-name> <new-name> : Change the session name</li>
+</ul>
+</li>
+<li>List
+<ul>
+<li>tmux ls</li>
+<li>Ctrl+b s</li>
+</ul>
+</li>
+</ul>
+<h3 id="window">Window</h3>
+<ul>
+<li>tmux new -s mysession -n mywindow
+<ul>
+<li>Start a new session with the name mysession and window mywindow.</li>
+</ul>
+</li>
+<li>Ctrl+b
+<ul>
+<li>Make/Kill
+<ul>
+<li>c : Create window</li>
+<li>&amp; : Close current window</li>
+</ul>
+</li>
+<li>Rename
+<ul>
+<li>, : Rename current window</li>
+</ul>
+</li>
+<li>Switch
+<ul>
+<li>p : Previous window</li>
+<li>n : Next window</li>
+<li>b [0..9] : Select window by number</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pain">Pain</h3>
+<ul>
+<li>Ctrl+b
+<ul>
+<li>Make/Kill
+<ul>
+<li>% : Split pane horizontally</li>
+<li>&quot; : Split pane vertically</li>
+<li>x : Close current pane</li>
+</ul>
+</li>
+<li>Alter
+<ul>
+<li>{ : Move the current pane left</li>
+<li>} : Move the current pane right</li>
+<li>z : Toggle pane zome</li>
+<li>space : Toggle between pane layouts</li>
+</ul>
+</li>
+<li>Convert
+<ul>
+<li>! : Conver pane into a window</li>
+</ul>
+</li>
+<li>Switch
+<ul>
+<li>o : Switch to next pane</li>
+<li>q [0..9] : Select pane by number</li>
+<li>; : Toggle last active pane</li>
+<li>arrow : Switch to pane to the direction</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
-                    </div>
 
-                    <div class="mx-0 mx-md-4 posts">
-                        <h1>Sections</h1>
-                        <ul>
-                            
-                                <li>
-                                    <a href="https://naomo.jp/posts/hot-to-write-sass/"><span>SCSS の扱い方を忘れたのでメモしておく</span></a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://naomo.jp/posts/20211003_tmux-cheetsheet/"><span>tmux ceetsheet</span></a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://naomo.jp/posts/my-first-post/"><span>はじめに</span></a>
-                                </li>
-                            
-                                <li>
-                                    <a href="https://naomo.jp/posts/20210625/"><span>テスト投稿</span></a>
-                                </li>
-                            
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
 
 
@@ -148,6 +278,9 @@
     
     
         
+<script src="https://naomo.jp/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 
     
 </body>

@@ -101,44 +101,44 @@
 <h3 id="導入">導入</h3>
 <p>環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)</p>
 <p>次の通り<code>sass -v</code> が通るので既にインストールされているよう。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$sass -v
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$sass -v
 Ruby Sass 3.7.4
 $gem list
 sass (3.7.4, 3.4.25)
 sass-listen (4.0.0)
 </code></pre></div><p>しかし<a href="https://sass-lang.com/ruby-sass">公式曰く</a> Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。</p>
 <p>homebrew で <a href="https://sass-lang.com/dart-sass">Dart Sass</a> をインストール。</p>
-<pre><code>$brew install sass/sass/sass
+<pre tabindex="0"><code>$brew install sass/sass/sass
 $sass --version
 1.32.8
 </code></pre><br>
 <h3 id="使用">使用</h3>
 <p>次の <code>input.scss</code> を <code>sass --style expanded input.scss:output.css</code> でコンパイル。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#00f">@use</span> <span style="color:#a31515">&#39;nomargin&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#00f">@use</span> <span style="color:#a31515">&#39;nomargin&#39;</span>;
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
 
 <span style="color:#00f">@mixin</span> transform($property) {
-  -webkit-transform: <span style="">$</span>property;
-  -ms-transform: <span style="">$</span>property;
-  transform: <span style="">$</span>property;
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
 }
 
 body {
-	font: 100<span style="">%</span> <span style="">$</span>font-stack;
-	color: <span style="">$</span>primary-color;
-	width: 600px/900px * 100<span style="">%</span>;
+	font: 100<span style="color:#2b91af">%</span> $font-stack;
+	color: $primary-color;
+	width: 600<span style="color:#2b91af">px</span>/900<span style="color:#2b91af">px</span> * 100<span style="color:#2b91af">%</span>;
 	a{text-decoration:none}
   <span style="color:#2b91af">.box</span> { <span style="color:#00f">@include</span> transform(rotate(30<span style="color:#2b91af">deg</span>)); }
 }
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#008000">// _nomargin.scss
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#008000">// _nomargin.scss
 </span><span style="color:#008000"></span>
 * {
 	margin:0;
 }
 </code></pre></div><p>次の <code>output.css</code> を得た。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">* {
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">* {
   <span style="color:#00f">margin</span>: 0;
 }
 

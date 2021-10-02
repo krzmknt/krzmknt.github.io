@@ -1,55 +1,374 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on naomo</title>
-    <link>https://naomo.jp/posts/</link>
-    <description>Recent content in Posts on naomo</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Sun, 03 Oct 2021 02:33:43 +0900</lastBuildDate><atom:link href="https://naomo.jp/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>tmux ceetsheet</title>
-      <link>https://naomo.jp/posts/20211003_tmux-cheetsheet/</link>
-      <pubDate>Sun, 03 Oct 2021 02:33:43 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/20211003_tmux-cheetsheet/</guid>
-      <description>Install $ sudo apt install tmux # sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
-    </item>
-    
-    <item>
-      <title>テスト投稿</title>
-      <link>https://naomo.jp/posts/20210625/</link>
-      <pubDate>Fri, 25 Jun 2021 22:13:29 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/20210625/</guid>
-      <description>これはテストの投稿です。 krzmknt.github.io のリポジトリを空にしました。</description>
-    </item>
-    
-    <item>
-      <title>SCSS の扱い方を忘れたのでメモしておく</title>
-      <link>https://naomo.jp/posts/hot-to-write-sass/</link>
-      <pubDate>Thu, 18 Mar 2021 22:13:29 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/hot-to-write-sass/</guid>
-      <description>SCSS とは ボトムアップに CSS -&amp;gt; Sass -&amp;gt; SCSS の順に説明する。
+    <channel>
+        <title>Posts on naomo</title>
+        <link>https://naomo.jp/posts/</link>
+        <description>Recent content in Posts on naomo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 03 Oct 2021 02:33:43 +0900</lastBuildDate>
+        <atom:link href="https://naomo.jp/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>tmux ceetsheet</title>
+            <link>https://naomo.jp/posts/20211003_tmux-cheetsheet/</link>
+            <pubDate>Sun, 03 Oct 2021 02:33:43 +0900</pubDate>
+            
+            <guid>https://naomo.jp/posts/20211003_tmux-cheetsheet/</guid>
+            <description>Install $ sudo apt install tmux # sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
+            <content type="html"><![CDATA[<h2 id="install">Install</h2>
+<pre tabindex="0"><code>$ sudo apt install tmux
+# sudo yum install tmux
+$ brew install tmux
+</code></pre><h2 id="architecture">Architecture</h2>
+<ul>
+<li>tmux
+<ul>
+<li>Session
+<ul>
+<li>Window
+<ul>
+<li>Pain</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="commands">Commands</h2>
+<h3 id="session">Session</h3>
+<ul>
+<li>Make
+<ul>
+<li>tmux new|new-session [-s <!-- raw HTML omitted -->]</li>
+<li>:new
+<ul>
+<li>Start a new session.</li>
+<li>If you don&rsquo;t give any option, subcommand &lsquo;new|new-session&rsquo; can be omitted.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attach
+<ul>
+<li>tmux a [-t <!-- raw HTML omitted -->]
+<ul>
+<li>Attach to last session</li>
+<li>With the option -t, attach to a session with the name <!-- raw HTML omitted -->.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Kill
+<ul>
+<li>tmux kill-ses [-t <!-- raw HTML omitted -->]
+<ul>
+<li>Kill the lru session.</li>
+<li>With option -t, you can specify a session.</li>
+</ul>
+</li>
+<li>tmux kill-server
+<ul>
+<li>Kill the all sessions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rename
+<ul>
+<li>C-b+$, :rename-session <!-- raw HTML omitted --> : Chage the session name</li>
+<li>tmux rename -t <!-- raw HTML omitted --> <!-- raw HTML omitted --> : Change the session name</li>
+</ul>
+</li>
+<li>List
+<ul>
+<li>tmux ls</li>
+<li>Ctrl+b s</li>
+</ul>
+</li>
+</ul>
+<h3 id="window">Window</h3>
+<ul>
+<li>tmux new -s mysession -n mywindow
+<ul>
+<li>Start a new session with the name mysession and window mywindow.</li>
+</ul>
+</li>
+<li>Ctrl+b
+<ul>
+<li>Make/Kill
+<ul>
+<li>c : Create window</li>
+<li>&amp; : Close current window</li>
+</ul>
+</li>
+<li>Rename
+<ul>
+<li>, : Rename current window</li>
+</ul>
+</li>
+<li>Switch
+<ul>
+<li>p : Previous window</li>
+<li>n : Next window</li>
+<li>b [0..9] : Select window by number</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pain">Pain</h3>
+<ul>
+<li>Ctrl+b
+<ul>
+<li>Make/Kill
+<ul>
+<li>% : Split pane horizontally</li>
+<li>&quot; : Split pane vertically</li>
+<li>x : Close current pane</li>
+</ul>
+</li>
+<li>Alter
+<ul>
+<li>{ : Move the current pane left</li>
+<li>} : Move the current pane right</li>
+<li>z : Toggle pane zome</li>
+<li>space : Toggle between pane layouts</li>
+</ul>
+</li>
+<li>Convert
+<ul>
+<li>! : Conver pane into a window</li>
+</ul>
+</li>
+<li>Switch
+<ul>
+<li>o : Switch to next pane</li>
+<li>q [0..9] : Select pane by number</li>
+<li>; : Toggle last active pane</li>
+<li>arrow : Switch to pane to the direction</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>テスト投稿</title>
+            <link>https://naomo.jp/posts/20210625/</link>
+            <pubDate>Fri, 25 Jun 2021 22:13:29 +0900</pubDate>
+            
+            <guid>https://naomo.jp/posts/20210625/</guid>
+            <description>これはテストの投稿です。 krzmknt.github.io のリポジトリを空にしました。</description>
+            <content type="html"><![CDATA[<p>これはテストの投稿です。
+krzmknt.github.io のリポジトリを空にしました。</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>SCSS の扱い方を忘れたのでメモしておく</title>
+            <link>https://naomo.jp/posts/hot-to-write-sass/</link>
+            <pubDate>Thu, 18 Mar 2021 22:13:29 +0900</pubDate>
+            
+            <guid>https://naomo.jp/posts/hot-to-write-sass/</guid>
+            <description>SCSS とは ボトムアップに CSS -&amp;gt; Sass -&amp;gt; SCSS の順に説明する。
 CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。
 Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。
 SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。
 導入 環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)
 次の通りsass -v が通るので既にインストールされているよう。
 $sass -v Ruby Sass 3.7.4 $gem list sass (3.7.4, 3.4.25) sass-listen (4.0.0) しかし公式曰く Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。
-homebrew で Dart Sass をインストール。</description>
-    </item>
-    
-    <item>
-      <title>はじめに</title>
-      <link>https://naomo.jp/posts/my-first-post/</link>
-      <pubDate>Fri, 19 Feb 2021 21:29:01 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/my-first-post/</guid>
-      <description>ブログを始めた
+homebrew で Dart Sass をインストール。
+$brew install sass/sass/sass $sass --version 1.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<h3 id="scss-とは">SCSS とは</h3>
+<p>ボトムアップに CSS -&gt; Sass -&gt; SCSS の順に説明する。</p>
+<p>CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(<a href="https://tools.ietf.org/html/rfc2318">RFC2318</a>)。</p>
+<p>Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。</p>
+<p>SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。</p>
+<!-- raw HTML omitted -->
+<h3 id="導入">導入</h3>
+<p>環境：macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)</p>
+<p>次の通り<code>sass -v</code> が通るので既にインストールされているよう。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$sass -v
+Ruby Sass 3.7.4
+$gem list
+sass <span style="color:#f92672">(</span>3.7.4, 3.4.25<span style="color:#f92672">)</span>
+sass-listen <span style="color:#f92672">(</span>4.0.0<span style="color:#f92672">)</span>
+</code></pre></div><p>しかし<a href="https://sass-lang.com/ruby-sass">公式曰く</a> Ruby Sass は 2019年3月26日でその生涯に幕を降ろしたようで、他実装への移行が推奨されている。当初の想定よりずっと幅広く使われるからRubyじゃ足りなくなったそう。</p>
+<p>homebrew で <a href="https://sass-lang.com/dart-sass">Dart Sass</a> をインストール。</p>
+<pre tabindex="0"><code>$brew install sass/sass/sass
+$sass --version
+1.32.8
+</code></pre><!-- raw HTML omitted -->
+<h3 id="使用">使用</h3>
+<p>次の <code>input.scss</code> を <code>sass --style expanded input.scss:output.css</code> でコンパイル。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#66d9ef">@use</span> <span style="color:#e6db74">&#39;nomargin&#39;</span>;
+
+$font-stack<span style="color:#f92672">:</span>    Helvetica<span style="color:#f92672">,</span> sans-serif;
+$primary-color<span style="color:#f92672">:</span> <span style="color:#ae81ff">#333</span>;
+
+<span style="color:#66d9ef">@mixin</span><span style="color:#a6e22e"> transform</span>($property) {
+  <span style="color:#a6e22e">-webkit-transform</span><span style="color:#f92672">:</span> $property;
+  <span style="color:#a6e22e">-ms-transform</span><span style="color:#f92672">:</span> $property;
+  <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> $property;
+}
+
+<span style="color:#f92672">body</span> {
+	<span style="color:#a6e22e">font</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span> $font-stack;
+	<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> $primary-color;
+	<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">600</span><span style="color:#66d9ef">px</span><span style="color:#f92672">/</span><span style="color:#ae81ff">900</span><span style="color:#66d9ef">px</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+	<span style="color:#f92672">a</span>{<span style="color:#a6e22e">text-decoration</span><span style="color:#f92672">:</span>none}
+  <span style="color:#a6e22e">.box</span> { <span style="color:#66d9ef">@include</span><span style="color:#a6e22e"> transform</span>(<span style="color:#a6e22e">rotate</span>(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">deg</span>)); }
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#75715e">// _nomargin.scss
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">*</span> {
+	<span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>次の <code>output.css</code> を得た。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">*</span> {
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#f92672">body</span> {
+  <span style="color:#66d9ef">font</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span> Helvetica, <span style="color:#66d9ef">sans-serif</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#333</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">66.6666666667</span><span style="color:#66d9ef">%</span>;
+}
+<span style="color:#f92672">body</span> <span style="color:#f92672">a</span> {
+  <span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>;
+}
+<span style="color:#f92672">body</span> .<span style="color:#a6e22e">box</span> {
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">deg</span>);
+  <span style="color:#66d9ef">-ms-</span><span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">deg</span>);
+  <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">deg</span>);
+}
+
+<span style="color:#75715e">/*# sourceMappingURL=output.css.map */</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="scss-のおもしろいコードとか-sass-との違いとか">scss のおもしろいコードとか sass との違いとか</h3>
+<p>また次の機会に。</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>はじめに</title>
+            <link>https://naomo.jp/posts/my-first-post/</link>
+            <pubDate>Fri, 19 Feb 2021 21:29:01 +0900</pubDate>
+            
+            <guid>https://naomo.jp/posts/my-first-post/</guid>
+            <description>ブログを始めた
 構成  SSG: Hugo  「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた  静的サイトジェネレーター Gatsby - Qiita はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした hugo new site naomo hugo new posts 20210220.md hugo の3コマンドで ./public に公開するファイルが作成される  あとはこれをデプロイするだけなのでシンプル     Theme: hugo-tanaka  シンプルでスッキリしている     ホスティング: GitHub Pages  public 下を github.com/username/username.github.io に配置するだけで公開   ドメイン取得: お名前.com DNS: Cloud Flare  CI  CircleCi  CIサービス初めて使った CIとは、コミットをトリガーとしてビルド、テストを自動で行うことを指す模様 今回はコミットをトリガーとして Hugo のビルドと Github Pagesへのデプロイを自動で行うようにした  「Hugo CircleCi」 とか検索すればブログ記事がいくつも見つかる   参考 Hugo, Github Pages, CircleCIつかってブログ構築 • abekoh&amp;rsquo;s tech note .</description>
-    </item>
-    
-  </channel>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<p>ブログを始めた</p>
+<!-- raw HTML omitted -->
+<h2 id="構成">構成</h2>
+<ul>
+<li>SSG: <a href="https://gohugo.io/">Hugo</a>
+<ul>
+<li>「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた
+<ul>
+<li><a href="https://qiita.com/umamichi/items/9bd08a21fddc71588efc">静的サイトジェネレーター Gatsby - Qiita</a></li>
+<li>はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした</li>
+<li><code>hugo new site naomo</code> <code>hugo new posts 20210220.md</code> <code>hugo</code> の3コマンドで <code>./public</code> に公開するファイルが作成される
+<ul>
+<li>あとはこれをデプロイするだけなのでシンプル</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Theme: <a href="https://github.com/nanxstats/hugo-tanka">hugo-tanaka</a>
+<ul>
+<li>シンプルでスッキリしている</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ホスティング: <a href="https://docs.github.com/ja/github/working-with-github-pages/about-github-pages">GitHub Pages</a>
+<ul>
+<li><code>public</code> 下を github.com/username/username.github.io に配置するだけで公開</li>
+</ul>
+</li>
+<li>ドメイン取得: <a href="https://www.onamae.com/">お名前.com</a></li>
+<li>DNS: <a href="https://dash.cloudflare.com/">Cloud Flare</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="ci">CI</h2>
+<ul>
+<li><a href="https://app.circleci.com/">CircleCi</a>
+<ul>
+<li>CIサービス初めて使った</li>
+<li>CIとは、コミットをトリガーとしてビルド、テストを自動で行うことを指す模様</li>
+<li>今回はコミットをトリガーとして Hugo のビルドと Github Pagesへのデプロイを自動で行うようにした
+<ul>
+<li>「Hugo CircleCi」 とか検索すればブログ記事がいくつも見つかる</li>
+</ul>
+</li>
+<li>参考 <a href="https://blog.abekoh.dev/post/how-to-build-this-blog/">Hugo, Github Pages, CircleCIつかってブログ構築 • abekoh&rsquo;s tech note</a></li>
+<li><code>.circleci/config.yml</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.circleci/config.yml" data-lang=".circleci/config.yml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+<span style="color:#f92672">orbs</span>:
+  <span style="color:#f92672">hugo</span>: <span style="color:#ae81ff">circleci/hugo@0.4.1</span>
+  <span style="color:#f92672">slack</span>: <span style="color:#ae81ff">circleci/slack@4.3.0</span>
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">deploy</span>:
+    <span style="color:#f92672">docker</span>:
+      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">cibuilds/base</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">add_ssh_keys</span>:
+          <span style="color:#f92672">fingerprints</span>:
+            - <span style="color:#e6db74">&#34;b8:23:b7:0c:4c:3a:fc:b1:a6:c2:4e:8c:57:15:b9:d0&#34;</span>
+      - <span style="color:#f92672">attach_workspace</span>:
+          <span style="color:#f92672">at</span>: <span style="color:#ae81ff">.</span>
+      - <span style="color:#f92672">deploy</span>:
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">deploy to Github Pages</span>
+          <span style="color:#f92672">command</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">            [ -e ~/.ssh ] || mkdir ~/.ssh
+</span><span style="color:#e6db74">            echo -e &#34;Host github.com\n\tStrictHostKeyChecking no\n&#34; &gt; ~/.ssh/config
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">            DEPLOY_DIR=deploy
+</span><span style="color:#e6db74">            git config --global user.email $USER_EMAIL
+</span><span style="color:#e6db74">            git config --global user.name $CIRCLE_USERNAME
+</span><span style="color:#e6db74">            git clone git@github.com:krzmknt/krzmknt.github.io.git $DEPLOY_DIR
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">            cd $DEPLOY_DIR
+</span><span style="color:#e6db74">            rm -vrf ./*
+</span><span style="color:#e6db74">            cp -v -R ../public/* ./
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">            echo &#34;naomo.jp&#34; &gt; CNAME
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">            git add -f .
+</span><span style="color:#e6db74">            git commit -m &#34;Deploy #$CIRCLE_BUILD_NUM from CircleCI [ci skip]&#34;
+</span><span style="color:#e6db74">            echo &#34;Lets push&#34;
+</span><span style="color:#e6db74">            git push origin master -f</span>            
+      - <span style="color:#f92672">slack/notify</span>:
+          <span style="color:#f92672">event</span>: <span style="color:#ae81ff">fail</span>
+          <span style="color:#f92672">template</span>: <span style="color:#ae81ff">basic_fail_1</span>
+      - <span style="color:#f92672">slack/notify</span>:
+          <span style="color:#f92672">event</span>: <span style="color:#ae81ff">pass</span>
+          <span style="color:#f92672">template</span>: <span style="color:#ae81ff">success_tagged_deploy_1</span>
+<span style="color:#f92672">workflows</span>:
+  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+  <span style="color:#f92672">main</span>:
+    <span style="color:#f92672">jobs</span>:
+      - <span style="color:#f92672">hugo/build</span>:
+          <span style="color:#f92672">html-proofer</span>: <span style="color:#66d9ef">false</span>
+      - <span style="color:#f92672">deploy</span>:
+          <span style="color:#f92672">requires</span>:
+            - <span style="color:#ae81ff">hugo/build</span>
+          <span style="color:#f92672">filters</span>:
+            <span style="color:#f92672">branches</span>:
+              <span style="color:#f92672">only</span>: <span style="color:#ae81ff">master</span>
+          <span style="color:#f92672">context</span>: <span style="color:#ae81ff">Slack Notification</span>
+</code></pre></div>]]></content>
+        </item>
+        
+    </channel>
 </rss>

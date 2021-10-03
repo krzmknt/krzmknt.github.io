@@ -9,12 +9,12 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 03 Oct 2021 02:33:43 +0900</lastBuildDate><atom:link href="https://naomo.jp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>tmux ceetsheet</title>
+      <title>tmux: cheatsheet</title>
       <link>https://naomo.jp/posts/20211003_tmux-cheetsheet/</link>
       <pubDate>Sun, 03 Oct 2021 02:33:43 +0900</pubDate>
       
       <guid>https://naomo.jp/posts/20211003_tmux-cheetsheet/</guid>
-      <description>Install $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Commands Session  Make  tmux new|new-session [-s ] :new  Start a new session. If you don&amp;rsquo;t give any option, subcommand &amp;lsquo;new|new-session&amp;rsquo; can be omitted.     Attach  tmux a [-t ]  Attach to last session With the option -t, attach to a session with the name .</description>
+      <description>Contents  How to install tmux Architecture of tmux Basic commands  How to install tmux $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture of tmux  tmux  Session  Window  Pain        Basic commands Session  New  tmux new [-s ] [-n ]   Attach  tmux a [-t ]   Detach  Prefix+d   Kill  tmux kill-ses [-t ] tmux kill-server : Kill the all sessions.</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       <pubDate>Thu, 18 Mar 2021 22:13:29 +0900</pubDate>
       
       <guid>https://naomo.jp/posts/hot-to-write-sass/</guid>
-      <description>What is SCSS  CSS -&amp;gt; Sass -&amp;gt; SCSS  CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。 Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。 SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。    Install  Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020) The command sass -v can go though. Is seems that it had already been installed.  $sass -v Ruby Sass 3.</description>
+      <description>Contents  What is SCSS How to install SCSS Usage  What is SCSS  CSS -&amp;gt; Sass -&amp;gt; SCSS  CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。 Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。 SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。    How to install SCSS  Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020) The command sass -v can go though.</description>
     </item>
     
     <item>

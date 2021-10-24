@@ -6,8 +6,27 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 03 Oct 2021 02:33:43 +0900</lastBuildDate>
+        <lastBuildDate>Sun, 24 Oct 2021 15:12:25 +0900</lastBuildDate>
         <atom:link href="https://naomo.jp/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>【vim】Jump with ctags</title>
+            <link>https://naomo.jp/posts/20211024_tagbar/</link>
+            <pubDate>Sun, 24 Oct 2021 15:12:25 +0900</pubDate>
+            
+            <guid>https://naomo.jp/posts/20211024_tagbar/</guid>
+            <description>Install ctags brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+Create a tag file Execute ctags -Rf .tags to generate .tags. ctags analyzes the source codes on the current directly recursively.
+Try to jump Execute :set tags=.tags on vim. (It is recomended to register this command to .vimrc) Execute a vim command :ta &amp;lt;word&amp;gt; or type ctrl+] on a &amp;lt;word&amp;gt; to jump to the definition.</description>
+            <content type="html"><![CDATA[<h3 id="install-ctags">Install ctags</h3>
+<p><code>brew install --HEAD universal-ctags/universal-ctags/universal-ctags</code></p>
+<h3 id="create-a-tag-file">Create a tag file</h3>
+<p>Execute <code>ctags -Rf .tags</code> to generate <code>.tags</code>. <code>ctags</code> analyzes the source codes on the current directly recursively.</p>
+<h3 id="try-to-jump">Try to jump</h3>
+<p>Execute <code>:set tags=.tags</code> on vim. (It is recomended to register this command to <code>.vimrc</code>)
+Execute a vim command <code>:ta &lt;word&gt;</code> or type <code>ctrl+]</code> on a <code>&lt;word&gt;</code> to jump to the definition.</p>
+]]></content>
+        </item>
         
         <item>
             <title>tmux: cheatsheet</title>

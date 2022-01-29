@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>scss: how to use</title>
+<title>[scss] How to Use</title>
 
 
   
@@ -15,16 +15,16 @@
 <link
   rel="alternate"
   type="application/rss+xml"
-  href="https://naomo.com/index.xml"
+  href="https://naomo.jp/index.xml"
   title="naomo"
 />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="scss: how to use"/>
-<meta name="twitter:description" content="Contents  What is SCSS How to install SCSS Usage  What is SCSS  CSS -&gt; Sass -&gt; SCSS  CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。 Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。 SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。    How to install SCSS  Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020) The command sass -v can go though."/>
+<meta name="twitter:title" content="[scss] How to Use"/>
+<meta name="twitter:description" content="Contents  What is SCSS How to install SCSS Usage  What is SCSS  CSS -&gt; Sass -&gt; SCSS  CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「."/>
 
 
 
-<link rel="stylesheet" href="https://naomo.com/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="https://naomo.jp/fontawesome/css/all.min.css" />
 
 
 
@@ -65,7 +65,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.83.1" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.1" />
   </head>
   <body>
     
@@ -90,7 +90,7 @@
         <div class="posts-heading">
           
             <h1>
-              scss: how to use
+              [scss] How to Use
             </h1>
           
           
@@ -125,7 +125,7 @@
 <li>Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020)</li>
 <li>The command <code>sass -v</code> can go though. Is seems that it had already been installed.</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">$sass</span> -v
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">$sass</span> -v
 Ruby Sass 3.7.4
 <span class="nv">$gem</span> list
 sass <span class="o">(</span>3.7.4, 3.4.25<span class="o">)</span>
@@ -138,36 +138,36 @@ sass-listen <span class="o">(</span>4.0.0<span class="o">)</span>
 <p>Install <a href="https://sass-lang.com/dart-sass">Dart Sass</a> with homebrew.</p>
 </li>
 </ul>
-<pre><code>$brew install sass/sass/sass
+<pre tabindex="0"><code>$brew install sass/sass/sass
 $sass --version
 1.32.8
 </code></pre><h2 id="usage">Usage</h2>
 <p>Compile the bellow scss file <code>input.scss</code> with the command <code>sass --style expanded input.scss:output.css</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@use</span> <span class="s1">&#39;nomargin&#39;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@use</span> <span class="s1">&#39;nomargin&#39;</span><span class="p">;</span>
 
-<span class="nv">$font-stack</span><span class="o">:</span>    <span class="n">Helvetica</span><span class="o">,</span> <span class="no">sans-serif</span><span class="p">;</span>
+<span class="nv">$font-stack</span><span class="o">:</span>    <span class="n">Helvetica</span><span class="o">,</span> <span class="ni">sans-serif</span><span class="p">;</span>
 <span class="nv">$primary-color</span><span class="o">:</span> <span class="mh">#333</span><span class="p">;</span>
 
 <span class="k">@mixin</span><span class="nf"> transform</span><span class="p">(</span><span class="nv">$property</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nt">-webkit-transform</span><span class="nd">:</span> <span class="err">$</span><span class="nt">property</span><span class="p">;</span>
-  <span class="nt">-ms-transform</span><span class="nd">:</span> <span class="err">$</span><span class="nt">property</span><span class="p">;</span>
-  <span class="nt">transform</span><span class="nd">:</span> <span class="err">$</span><span class="nt">property</span><span class="p">;</span>
+  <span class="na">-webkit-transform</span><span class="o">:</span> <span class="nv">$property</span><span class="p">;</span>
+  <span class="na">-ms-transform</span><span class="o">:</span> <span class="nv">$property</span><span class="p">;</span>
+  <span class="na">transform</span><span class="o">:</span> <span class="nv">$property</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">body</span> <span class="p">{</span>
-	<span class="nt">font</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span> <span class="err">$</span><span class="nt">font-stack</span><span class="p">;</span>
-	<span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">primary-color</span><span class="p">;</span>
-	<span class="nt">width</span><span class="nd">:</span> <span class="nt">600px</span><span class="o">/</span><span class="nt">900px</span> <span class="o">*</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
-	<span class="nt">a</span><span class="p">{</span><span class="nt">text-decoration</span><span class="nd">:none</span><span class="p">}</span>
+	<span class="na">font</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span> <span class="nv">$font-stack</span><span class="p">;</span>
+	<span class="na">color</span><span class="o">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+	<span class="na">width</span><span class="o">:</span> <span class="mi">600</span><span class="kt">px</span><span class="o">/</span><span class="mi">900</span><span class="kt">px</span> <span class="o">*</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+	<span class="nt">a</span><span class="p">{</span><span class="na">text-decoration</span><span class="o">:</span><span class="ni">none</span><span class="p">}</span>
   <span class="nc">.box</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> transform</span><span class="p">(</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">30</span><span class="kt">deg</span><span class="p">));</span> <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// _nomargin.scss
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// _nomargin.scss
 </span><span class="c1"></span>
 <span class="o">*</span> <span class="p">{</span>
-	<span class="nt">margin</span><span class="nd">:0</span><span class="p">;</span>
+	<span class="na">margin</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><p>The bellow css file <code>output.css</code> is generated.</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">*</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="o">*</span> <span class="p">{</span>
   <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -207,7 +207,7 @@ $sass --version
     
     
       
-      <a href="tags" name="Tags">
+      <a href="/tags" name="Tags">
         <em class="fas fa-tag fa-lg"></em>
       </a>
     
@@ -225,12 +225,12 @@ $sass --version
   
   <div class="container">
     <p class="credits copyright">
-      <a href="https://naomo.com/about">Kanta Kurazumi</a>
+      <a href="https://naomo.jp/about">Kanta Kurazumi</a>
       &nbsp;&copy;
       2021
       
         &nbsp;/&nbsp;
-        <a href="https://naomo.com/">naomo</a>
+        <a href="https://naomo.jp/">naomo</a>
       
       &nbsp;&ndash;&nbsp;
       <em class="fas fa-moon" id="dark-mode-toggle"></em>

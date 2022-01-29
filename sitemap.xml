@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://naomo.jp/posts/20211024_tagbar/</loc>
+    <lastmod>2021-10-24T15:12:25+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/ctags/</loc>
+    <lastmod>2021-10-24T15:12:25+09:00</lastmod>
+  </url><url>
     <loc>https://naomo.jp/</loc>
     <lastmod>2021-10-24T15:12:25+09:00</lastmod>
   </url><url>
@@ -11,19 +17,22 @@
     <loc>https://naomo.jp/tags/</loc>
     <lastmod>2021-10-24T15:12:25+09:00</lastmod>
   </url><url>
-    <loc>https://naomo.jp/tags/untagged/</loc>
-    <lastmod>2021-10-24T15:12:25+09:00</lastmod>
-  </url><url>
-    <loc>https://naomo.jp/posts/20211024_tagbar/</loc>
+    <loc>https://naomo.jp/tags/vim/</loc>
     <lastmod>2021-10-24T15:12:25+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/posts/20211003_tmux-cheetsheet/</loc>
     <lastmod>2021-10-03T02:33:43+09:00</lastmod>
   </url><url>
-    <loc>https://naomo.jp/posts/hot-to-write-sass/</loc>
+    <loc>https://naomo.jp/tags/tmux/</loc>
+    <lastmod>2021-10-03T02:33:43+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/posts/20210318_sass/</loc>
     <lastmod>2021-03-18T22:13:29+09:00</lastmod>
   </url><url>
-    <loc>https://naomo.jp/posts/my-first-post/</loc>
+    <loc>https://naomo.jp/posts/20210219_first-post/</loc>
+    <lastmod>2021-02-19T21:29:01+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/diary/</loc>
     <lastmod>2021-02-19T21:29:01+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/categories/</loc>

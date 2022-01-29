@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>diary on naomo</title>
+		<link>https://naomo.jp/tags/diary/</link>
+		<description>Recent content in diary </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/diary) (Kanta Kurazumi)</managingEditor>
+    	
+  		<lastBuildDate>Fri, 19 Feb 2021 21:29:01 +0900</lastBuildDate>
+		
+		<atom:link href="/tags/diary/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>

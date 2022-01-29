@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>tmux: cheatsheet</title>
+<title>[tmux] Cheatsheet</title>
 
 
   
@@ -19,8 +19,9 @@
   title="naomo"
 />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="tmux: cheatsheet"/>
-<meta name="twitter:description" content="Contents  How to install tmux Architecture of tmux Basic commands  How to install tmux $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture of tmux  tmux  Session  Window  Pain        Basic commands Session  New  tmux new [-s ] [-n ]   Attach  tmux a [-t ]   Detach  Prefix&#43;d   Kill  tmux kill-ses [-t ] tmux kill-server : Kill the all sessions."/>
+<meta name="twitter:title" content="[tmux] Cheatsheet"/>
+<meta name="twitter:description" content="Contents 次の方法で構成される
+ How to install tmux Architecture of tmux Basic commands  How to install tmux $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture of tmux  tmux  Session  Window  Pain        Basic commands Session  New: tmux new [-s &lt;session-name&gt;] [-n &lt;window-name&gt;] Attach: tmux a [-t &lt;session-name&gt;] Detach: Prefix&#43;d Kill: tmux kill-ses [-t &lt;session-name&gt;] Kill the all sessions: tmux kill-server Rename: tmux rename -t &lt;old-name&gt; &lt;new-name&gt; or Prefix&#43;$ List  tmux ls Prefix&#43;s    Window(Prefix&#43;)  New/Kill  c : Create window &amp; : Close current window   Rename  , : Rename current window   Switch  p : Previous window n : Next window b [0."/>
 
 
 
@@ -90,7 +91,7 @@
         <div class="posts-heading">
           
             <h1>
-              tmux: cheatsheet
+              [tmux] Cheatsheet
             </h1>
           
           
@@ -105,6 +106,7 @@
     <article class="article" class="blog-post">
       
   <h2 id="contents">Contents</h2>
+<p>次の方法で構成される</p>
 <ul>
 <li>How to install tmux</li>
 <li>Architecture of tmux</li>
@@ -133,33 +135,12 @@ $ brew install tmux
 <h2 id="basic-commands">Basic commands</h2>
 <h3 id="session">Session</h3>
 <ul>
-<li>New
-<ul>
-<li>tmux new [-s <!-- raw HTML omitted -->] [-n <!-- raw HTML omitted -->]</li>
-</ul>
-</li>
-<li>Attach
-<ul>
-<li>tmux a [-t <!-- raw HTML omitted -->]</li>
-</ul>
-</li>
-<li>Detach
-<ul>
-<li>Prefix+d</li>
-</ul>
-</li>
-<li>Kill
-<ul>
-<li>tmux kill-ses [-t <!-- raw HTML omitted -->]</li>
-<li>tmux kill-server : Kill the all sessions.</li>
-</ul>
-</li>
-<li>Rename
-<ul>
-<li>tmux rename -t <!-- raw HTML omitted --> <!-- raw HTML omitted --></li>
-<li>Prefix+$</li>
-</ul>
-</li>
+<li>New: <code>tmux new [-s &lt;session-name&gt;] [-n &lt;window-name&gt;]</code></li>
+<li>Attach: <code>tmux a [-t &lt;session-name&gt;]</code></li>
+<li>Detach: <code>Prefix+d</code></li>
+<li>Kill: <code>tmux kill-ses [-t &lt;session-name&gt;]</code></li>
+<li>Kill the all sessions: <code>tmux kill-server</code></li>
+<li>Rename: <code>tmux rename -t &lt;old-name&gt; &lt;new-name&gt;</code> or <code>Prefix+$</code></li>
 <li>List
 <ul>
 <li>tmux ls</li>
@@ -224,6 +205,15 @@ $ brew install tmux
 
 
       
+        <div class="blog-tags">
+          
+            <a
+              href="https://naomo.jp/tags/tmux/"
+              >tmux</a
+            >&nbsp;
+          
+        </div>
+      
     </article>
     
     
@@ -240,7 +230,7 @@ $ brew install tmux
     
     
       
-      <a href="tags" name="Tags">
+      <a href="/tags" name="Tags">
         <em class="fas fa-tag fa-lg"></em>
       </a>
     

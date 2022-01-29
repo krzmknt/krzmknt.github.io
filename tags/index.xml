@@ -1,21 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on naomo</title>
-    <link>https://naomo.jp/tags/</link>
-    <description>Recent content in Tags on naomo</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 24 Oct 2021 15:12:25 +0900</lastBuildDate><atom:link href="https://naomo.jp/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>untagged</title>
-      <link>https://naomo.jp/tags/untagged/</link>
-      <pubDate>Sun, 24 Oct 2021 15:12:25 +0900</pubDate>
-      
-      <guid>https://naomo.jp/tags/untagged/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Tags on naomo</title>
+		<link>https://naomo.com/tags/</link>
+		<description>Recent content in Tags </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags) (Kanta Kurazumi)</managingEditor>
+    	
+  		<lastBuildDate>Sun, 24 Oct 2021 15:12:25 +0900</lastBuildDate>
+		
+		<atom:link href="/tags/" rel="self" type="application/rss+xml" />
+		
+	</channel>
 </rss>

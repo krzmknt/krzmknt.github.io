@@ -1,50 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>naomo</title>
-    <link>https://naomo.jp/</link>
-    <description>Recent content on naomo</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 24 Oct 2021 15:12:25 +0900</lastBuildDate><atom:link href="https://naomo.jp/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>【vim】Jump with ctags</title>
-      <link>https://naomo.jp/posts/20211024_tagbar/</link>
-      <pubDate>Sun, 24 Oct 2021 15:12:25 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/20211024_tagbar/</guid>
-      <description>Install ctags brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-Create a tag file Execute ctags -Rf .tags to generate .tags. ctags analyzes the source codes on the current directly recursively.
-Try to jump Execute :set tags=.tags on vim. (It is recomended to register this command to .vimrc) Execute a vim command :ta &amp;lt;word&amp;gt; or type ctrl+] on a &amp;lt;word&amp;gt; to jump to the definition.</description>
-    </item>
-    
-    <item>
-      <title>tmux: cheatsheet</title>
-      <link>https://naomo.jp/posts/20211003_tmux-cheetsheet/</link>
-      <pubDate>Sun, 03 Oct 2021 02:33:43 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/20211003_tmux-cheetsheet/</guid>
-      <description>Contents  How to install tmux Architecture of tmux Basic commands  How to install tmux $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture of tmux  tmux  Session  Window  Pain        Basic commands Session  New  tmux new [-s ] [-n ]   Attach  tmux a [-t ]   Detach  Prefix+d   Kill  tmux kill-ses [-t ] tmux kill-server : Kill the all sessions.</description>
-    </item>
-    
-    <item>
-      <title>scss: how to use</title>
-      <link>https://naomo.jp/posts/hot-to-write-sass/</link>
-      <pubDate>Thu, 18 Mar 2021 22:13:29 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/hot-to-write-sass/</guid>
-      <description>Contents  What is SCSS How to install SCSS Usage  What is SCSS  CSS -&amp;gt; Sass -&amp;gt; SCSS  CSS(Cascading Style Sheet) ：HTML,XML,XHTML,SVG,XUL などのマークアップ言語を用いて構造化されたドキュメントにおける各要素をどのように修飾するかを指示するスタイルシート言語の仕様の１つ。W3C(World Wide Web Consortium) がとりまとめ勧告する。拡張子は「.css」でMIME-typeは「text/css」(RFC2318)。 Sass(Syntactically Awesome StyleSheet)：CSS拡張言語。.sass, .scss ファイルを .css ファイルにコンパイルするコンパイラであり、その .sass, .scss の文法仕様。CSSが扱えない 変数の使用、モジュール化、ネスト、拡張、継承、関数などの機能を提供する。 SCSS(Sassy CSS)：その .scss ファイルのこと。またその文法仕様、文法規則。    How to install SCSS  Environment: macOS Big Sur Version 11.0.1 on MacBook Air (M1, 2020) The command sass -v can go though.</description>
-    </item>
-    
-    <item>
-      <title>naomo: construction</title>
-      <link>https://naomo.jp/posts/my-first-post/</link>
-      <pubDate>Fri, 19 Feb 2021 21:29:01 +0900</pubDate>
-      
-      <guid>https://naomo.jp/posts/my-first-post/</guid>
-      <description>I have started a blog (this site)  construction  SSG: Hugo  「Static Site Generator」で Google 検索したら２つ目に次のサイトが出てきた  静的サイトジェネレーター Gatsby - Qiita はじめ Gatsby にしてみたけどよくわからなかったので10分ぐらい触った後なんとなく３つ目の Hugo を使うことにした hugo new site naomo hugo new posts 20210220.md hugo の3コマンドで ./public に公開するファイルが作成される   theme: hugo-tanaka  simple theme but, now (20211003) hello-friend-ng.     Hosting: GitHub Pages  The site is published only with deploying &amp;lsquo;public&amp;rsquo; to github.com/username/username.github.io   Buying the domain: onamae.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>naomo on naomo</title>
+		<link>https://naomo.com/</link>
+		<description>Recent content in naomo </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(&#34;naomo&#34;) (Kanta Kurazumi)</managingEditor>
+    	
+  		<lastBuildDate>Sun, 24 Oct 2021 15:12:25 +0900</lastBuildDate>
+		
+		<atom:link href="/" rel="self" type="application/rss+xml" />
+		
+	</channel>
 </rss>

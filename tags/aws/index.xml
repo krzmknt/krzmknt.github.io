@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>aws on naomo</title>
+		<link>https://naomo.jp/tags/aws/</link>
+		<description>Recent content in aws </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/aws) (Kanta Kurazumi)</managingEditor>
+    	
+  		<lastBuildDate>Sun, 30 Jan 2022 12:48:00 +0900</lastBuildDate>
+		
+		<atom:link href="/tags/aws/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>

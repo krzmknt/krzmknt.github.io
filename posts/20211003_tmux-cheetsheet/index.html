@@ -20,8 +20,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[tmux] Cheatsheet"/>
-<meta name="twitter:description" content="Contents 次の方法で構成される
- How to install tmux Architecture of tmux Basic commands  How to install tmux $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture of tmux  tmux  Session  Window  Pain        Basic commands Session  New: tmux new [-s &lt;session-name&gt;] [-n &lt;window-name&gt;] Attach: tmux a [-t &lt;session-name&gt;] Detach: Prefix&#43;d Kill: tmux kill-ses [-t &lt;session-name&gt;] Kill the all sessions: tmux kill-server Rename: tmux rename -t &lt;old-name&gt; &lt;new-name&gt; or Prefix&#43;$ List  tmux ls Prefix&#43;s    Window(Prefix&#43;)  New/Kill  c : Create window &amp; : Close current window   Rename  , : Rename current window   Switch  p : Previous window n : Next window b [0."/>
+<meta name="twitter:description" content="Contents  How to install tmux Architecture of tmux Basic commands  How to install tmux $ sudo apt install tmux $ sudo yum install tmux $ brew install tmux Architecture  tmux  Session  Window  Pain        Basic commands Session  tmux new [-s &lt;session-name&gt;] [-n &lt;window-name&gt;]: Create a new settion tmux a [-t &lt;session-name&gt;]: Attach the exsiting session tmux a -d [-t &lt;session-name&gt;]: Detach the existing session and then attach it Prefix&#43;d: Detach the current session tmux kill-ses [-t &lt;session-name&gt;]: Kill the session tmux kill-server: Kill the all session tmux rename -t &lt;old-name&gt; &lt;new-name&gt; or Prefix&#43;$: Rename the session tmux ls or Prefix&#43;s: List the existing sesions  Window(Prefix&#43;)  c: Create a window &amp;: Close the current window ,: Rename current window p: Move to the previous window n: Move to the next window b [0."/>
 
 
 
@@ -106,7 +105,6 @@
     <article class="article" class="blog-post">
       
   <h2 id="contents">Contents</h2>
-<p>次の方法で構成される</p>
 <ul>
 <li>How to install tmux</li>
 <li>Architecture of tmux</li>
@@ -116,7 +114,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ sudo apt install tmux
 $ sudo yum install tmux
 $ brew install tmux
-</code></pre></div><h2 id="architecture-of-tmux">Architecture of tmux</h2>
+</code></pre></div><h2 id="architecture">Architecture</h2>
 <ul>
 <li>tmux
 <ul>
@@ -135,71 +133,41 @@ $ brew install tmux
 <h2 id="basic-commands">Basic commands</h2>
 <h3 id="session">Session</h3>
 <ul>
-<li>New: <code>tmux new [-s &lt;session-name&gt;] [-n &lt;window-name&gt;]</code></li>
-<li>Attach: <code>tmux a [-t &lt;session-name&gt;]</code></li>
-<li>Detach: <code>Prefix+d</code></li>
-<li>Kill: <code>tmux kill-ses [-t &lt;session-name&gt;]</code></li>
-<li>Kill the all sessions: <code>tmux kill-server</code></li>
-<li>Rename: <code>tmux rename -t &lt;old-name&gt; &lt;new-name&gt;</code> or <code>Prefix+$</code></li>
-<li>List
-<ul>
-<li>tmux ls</li>
-<li>Prefix+s</li>
-</ul>
-</li>
+<li><code>tmux new [-s &lt;session-name&gt;] [-n &lt;window-name&gt;]</code>: Create a new settion</li>
+<li><code>tmux a [-t &lt;session-name&gt;]</code>: Attach the exsiting session</li>
+<li><code>tmux a -d [-t &lt;session-name&gt;]</code>: Detach the existing session and then attach it</li>
+<li><code>Prefix+d</code>: Detach the current session</li>
+<li><code>tmux kill-ses [-t &lt;session-name&gt;]</code>: Kill the session</li>
+<li><code>tmux kill-server</code>: Kill the all session</li>
+<li><code>tmux rename -t &lt;old-name&gt; &lt;new-name&gt;</code> or <code>Prefix+$</code>: Rename the session</li>
+<li><code>tmux ls</code> or <code>Prefix+s</code>: List the existing sesions</li>
 </ul>
 <h3 id="windowprefix">Window(Prefix+)</h3>
 <ul>
-<li>New/Kill
-<ul>
-<li>c : Create window</li>
-<li>&amp; : Close current window</li>
-</ul>
-</li>
-<li>Rename
-<ul>
-<li>, : Rename current window</li>
-</ul>
-</li>
-<li>Switch
-<ul>
-<li>p : Previous window</li>
-<li>n : Next window</li>
-<li>b [0..9] : Select window by number</li>
-</ul>
-</li>
+<li><code>c</code>: Create a window</li>
+<li><code>&amp;</code>: Close the current window</li>
+<li><code>,</code>: Rename current window</li>
+<li><code>p</code>: Move to the previous window</li>
+<li><code>n</code>: Move to the next window</li>
+<li><code>b [0..9]</code>: Select window by number</li>
 </ul>
 <h3 id="painprefix">Pain(Prefix+)</h3>
 <ul>
-<li>New/Kill
-<ul>
-<li>% : Split pane horizontally</li>
-<li>&quot; : Split pane vertically</li>
-<li>x : Close current pane</li>
+<li><code>%</code>: Split the pane horizontally</li>
+<li><code>&quot;</code>: Split the pane vertically</li>
+<li><code>x</code>: Close the current pane</li>
+<li><code>{</code>: Move the current pane left</li>
+<li><code>}</code>: Move the current pane right</li>
+<li><code>z</code>: Toggle the pane zome</li>
+<li><code>[space]</code>: Toggle between pane layouts</li>
+<li><code>!</code>: Conver the pane into a window</li>
+<li><code>o</code>: Switch to the next pane</li>
+<li><code>q [0..9]</code>: Select the pane by number</li>
+<li><code>;</code>: Toggle the last active pane</li>
+<li><code>[arrow]</code>: Switch to the pane to the direction</li>
 </ul>
-</li>
-<li>Alter
-<ul>
-<li>{ : Move the current pane left</li>
-<li>} : Move the current pane right</li>
-<li>z : Toggle pane zome</li>
-<li>space : Toggle between pane layouts</li>
-</ul>
-</li>
-<li>Convert
-<ul>
-<li>! : Conver pane into a window</li>
-</ul>
-</li>
-<li>Switch
-<ul>
-<li>o : Switch to next pane</li>
-<li>q [0..9] : Select pane by number</li>
-<li>; : Toggle last active pane</li>
-<li>arrow : Switch to pane to the direction</li>
-</ul>
-</li>
-</ul>
+<h2 id="configuration">Configuration</h2>
+<p><a href="https://github.com/krzmknt/dotfiles/blob/5d439c87351884f0671325bd1d3d6ef3bde9ace5/.tmux.conf">.tmux.conf</a></p>
 
 
 
@@ -250,7 +218,7 @@ $ brew install tmux
     <p class="credits copyright">
       <a href="https://naomo.jp/about">Kanta Kurazumi</a>
       &nbsp;&copy;
-      2021
+      2022
       
         &nbsp;/&nbsp;
         <a href="https://naomo.jp/">naomo</a>

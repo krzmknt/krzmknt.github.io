@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>[AWS] Switch (Assume) Role</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://naomo.jp/index.xml"
+  title="naomo"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[AWS] Switch (Assume) Role"/>
+<meta name="twitter:description" content="Fig.1 &ndash; The relationship between the IAM resources used for a switch role. 1) The policy policy/SwitcherPolicy is attached to the user user/Switcher which allows the user to assume the role role/SwitcheeRole to be switched."/>
+
+
+
+<link rel="stylesheet" href="https://naomo.jp/fontawesome/css/all.min.css" />
+
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>
+              [AWS] Switch (Assume) Role
+            </h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <p><img src="https://scrapbox.io/files/61ffce910aca16001da7b9cd.png" alt="">
+<em>Fig.1 &ndash; The relationship between the IAM resources used for a switch role. 1) The policy <code>policy/SwitcherPolicy</code> is attached to the user <code>user/Switcher</code> which allows the user to assume the role <code>role/SwitcheeRole</code> to be switched. 2) The role <code>role/SwitcherRole</code> specifies &ldquo;which user can assume the role&rdquo; in its trust policy. In this case, the role trusts the user <code>user/switcher</code> and has an administrative right. As a result, by swithing the role, the user aquires the administrative right in the switchee account.</em></p>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-this-post-tells-about">What this post tells about</a></li>
+    <li><a href="#component">Component</a>
+      <ul>
+        <li><a href="#1-switcher-policy">1. Switcher Policy</a></li>
+        <li><a href="#2-swichee-role">2. Swichee Role</a></li>
+      </ul>
+    </li>
+    <li><a href="#try-to-switch-with-aws-cli">Try to switch with aws-cli</a></li>
+    <li><a href="#are-aws-services-also-switching-">Are AWS services also &ldquo;switching&rdquo; ?</a></li>
+  </ul>
+</nav><h2 id="what-this-post-tells-about">What this post tells about</h2>
+<p>Outlines the relationships between the components used for a switch role (<em>Fig.1</em> shows the sketch of the relationships between IAM resources in the setting where the user <code>user/Switcher</code> tries to switch the role <code>role/SwitcheeRole</code>.)</p>
+<h2 id="component">Component</h2>
+<h3 id="1-switcher-policy">1. Switcher Policy</h3>
+<p>The policy <code>policy/SwitcherPolicy</code> whose permission is given in <em>Code.1</em> is attached to the user <code>user/Switcher</code>. The policy defines <strong>which roles the user can switch</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;Version&#34;</span><span class="p">:</span> <span class="s2">&#34;2012-10-17&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;Statement&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;Effect&#34;</span><span class="p">:</span> <span class="s2">&#34;Allow&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;Action&#34;</span><span class="p">:</span> <span class="s2">&#34;sts:AssumeRole&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;Resource&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;switchee-role-arn&gt;&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p><em>Code.1 &ndash; The permission defined in the switcher policy. &lt;switchee-role-arn&gt; is a placeholder for the ARN of the role to be switched defined in the switchee account. It can contain asterisk *. E.g., &ldquo;arn:aws:iam::&lt;switchee-account-id&gt;:role/*&rdquo; represents the any role defined in the switchee&rsquo;s account.</em></p>
+<h3 id="2-swichee-role">2. Swichee Role</h3>
+<p>The switcher <code>user/Switcher</code> can assume the role <code>role:SwitcheeRole</code> due to the role trusts the user.
+The relationship is defined by the trust policy given in <em>Code.2</em> set in the role configuration.
+The trust policy defines <em>which users should be switchable to the role</em>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;Version&#34;</span><span class="p">:</span> <span class="s2">&#34;2012-10-17&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Statement&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;Effect&#34;</span><span class="p">:</span> <span class="s2">&#34;Allow&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;Principal&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;AWS&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;switcher-user-arn&gt;&#34;</span>
+      <span class="p">},</span>
+      <span class="nt">&#34;Action&#34;</span><span class="p">:</span> <span class="s2">&#34;sts:AssumeRole&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;Condition&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;BoolIfExists&#34;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&#34;aws:MultiFactorAuthPresent&#34;</span> <span class="p">:</span> <span class="s2">&#34;true&#34;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><p><em>Code.2 &ndash; The trust poclicy defined in the role <code>role/SwitcheeRole</code>. <code>Condition</code> requires the user logging in with MFA. In addition to this option, for example, <code>&quot;StringEquals&quot;: {&quot;sts:ExternalId&quot;: &quot;abcdef&quot;}</code> checks if the switcher feeds the external id &ldquo;abcdef&rdquo; when it tries to switch (although the external id cannot be specified in the management console). You can see other examples at this official blog entry &ldquo;<a href="https://aws.amazon.com/jp/blogs/security/how-to-use-trust-policies-with-iam-roles/">How to use trust policies with IAM roles | AWS Security Blog</a>&rdquo;.</em></p>
+<h2 id="try-to-switch-with-aws-cli">Try to switch with aws-cli</h2>
+<p>Actually, let&rsquo;s try to switch the role with aws-cli using the switcher credentials. Write <em>Code.4</em> in <code>~/.aws/configure</code>.</p>
+<pre tabindex="0"><code>[profile default]
+region = us-east-1
+output = json
+
+[profile switchee]
+role_arn = arn:aws:iam::123456789012:role/SwitcheeRole
+source_profile = default
+</code></pre><p><em>Code.3 &ndash; aws-cli configuration</em></p>
+<p>Now, you can switch the switchee&rsquo;s role with an option <code>--profile &lt;profile_name&gt;</code>. For example <code>aws s3 ls --profile switchee</code>.</p>
+<h2 id="are-aws-services-also-switching-">Are AWS services also &ldquo;switching&rdquo; ?</h2>
+<p><em>Code.4</em> is a trust policy given in a role <code>role/ecsTaskExcecutionRole</code>. <em>Code.2</em> and <em>Code.5</em> look like they do the same thing except for the difference in whether the switcher is a service or an IAM user (<em>Fig.2</em>). Actually, the both of the ECS tasks and the user just do the same action <code>sts:AssumeRole</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;Version&#34;</span><span class="p">:</span> <span class="s2">&#34;2008-10-17&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;Statement&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;Sid&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;Effect&#34;</span><span class="p">:</span> <span class="s2">&#34;Allow&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;Principal&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;Service&#34;</span><span class="p">:</span> <span class="s2">&#34;ecs-tasks.amazonaws.com&#34;</span>
+      <span class="p">},</span>
+      <span class="nt">&#34;Action&#34;</span><span class="p">:</span> <span class="s2">&#34;sts:AssumeRole&#34;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><p><em>Code.4 &ndash; The trust policy given in the role <code>role/ecsTaskExecutionRole</code>.</em></p>
+<p><img src="https://scrapbox.io/files/61ffe1135af1af001dcf3126.png" alt="concept">
+<em>Fig.2 &ndash; A comparison of &ldquo;assume&rdquo; by IAM users and AWS services.</em></p>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://naomo.jp/tags/aws/"
+              >aws</a
+            >&nbsp;
+          
+            <a
+              href="https://naomo.jp/tags/iam/"
+              >iam</a
+            >&nbsp;
+          
+            <a
+              href="https://naomo.jp/tags/switchrole/"
+              >switchrole</a
+            >&nbsp;
+          
+            <a
+              href="https://naomo.jp/tags/hand-on/"
+              >hand-on</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+      <script>
+  document.addEventListener('scroll', function () {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      document.getElementById('backtotopButton').style.opacity = '1'
+      document.getElementById('backtotopButton').style.transition = '0.5s'
+    } else {
+      document.getElementById('backtotopButton').style.opacity = '0'
+      document.getElementById('backtotopButton').style.transition = '0.5s'
+    }
+  })
+
+  function topFunction() {
+    document.body.scrollTop = 0 
+    document.documentElement.scrollTop = 0 
+  }
+</script>
+
+      <button onclick="topFunction()" id="backtotopButton">
+        <em class="fa fa-angle-up"></em>
+      </button>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="/tags" name="Tags">
+        <em class="fas fa-tag fa-lg"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://twitter.com/_naomo" name="twitter">
+        <em class="fab fa-twitter-square fa-lg"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://naomo.jp/about">Kanta Kurazumi</a>
+      &nbsp;&copy;
+      2022
+      
+        &nbsp;/&nbsp;
+        <a href="https://naomo.jp/">naomo</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

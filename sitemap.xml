@@ -2,19 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://naomo.jp/posts/20220130_aws-switch-role/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/aws/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/hand-on/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/iam/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/posts/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/switchrole/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/</loc>
+    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+  </url><url>
     <loc>https://naomo.jp/posts/20211024_tagbar/</loc>
     <lastmod>2021-10-24T15:12:25+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/tags/ctags/</loc>
-    <lastmod>2021-10-24T15:12:25+09:00</lastmod>
-  </url><url>
-    <loc>https://naomo.jp/</loc>
-    <lastmod>2021-10-24T15:12:25+09:00</lastmod>
-  </url><url>
-    <loc>https://naomo.jp/posts/</loc>
-    <lastmod>2021-10-24T15:12:25+09:00</lastmod>
-  </url><url>
-    <loc>https://naomo.jp/tags/</loc>
     <lastmod>2021-10-24T15:12:25+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/tags/vim/</loc>
@@ -27,6 +42,12 @@
     <lastmod>2021-10-03T02:33:43+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/posts/20210318_sass/</loc>
+    <lastmod>2021-03-18T22:13:29+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/css/</loc>
+    <lastmod>2021-03-18T22:13:29+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/scss/</loc>
     <lastmod>2021-03-18T22:13:29+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/posts/20210219_first-post/</loc>

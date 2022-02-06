@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>scss on naomo</title>
+		<link>https://naomo.jp/tags/scss/</link>
+		<description>Recent content in scss </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/scss) (Kanta Kurazumi)</managingEditor>
+    	
+  		<lastBuildDate>Thu, 18 Mar 2021 22:13:29 +0900</lastBuildDate>
+		
+		<atom:link href="/tags/scss/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>

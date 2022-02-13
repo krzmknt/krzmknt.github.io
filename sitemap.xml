@@ -2,10 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://naomo.jp/posts/20220130_aws-switch-role/</loc>
-    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
+    <loc>https://naomo.jp/tags/base64/</loc>
+    <lastmod>2022-02-12T01:54:21+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/fold/</loc>
+    <lastmod>2022-02-12T01:54:21+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/posts/20220212_generate-random-file/</loc>
+    <lastmod>2022-02-12T01:54:21+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/head/</loc>
+    <lastmod>2022-02-12T01:54:21+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/</loc>
+    <lastmod>2022-02-12T01:54:21+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/posts/</loc>
+    <lastmod>2022-02-12T01:54:21+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/</loc>
+    <lastmod>2022-02-12T01:54:21+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/posts/20220211_aws-piped-s3/</loc>
+    <lastmod>2022-02-11T22:54:20+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/tags/aws/</loc>
+    <lastmod>2022-02-11T22:54:20+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/funzip/</loc>
+    <lastmod>2022-02-11T22:54:20+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/s3/</loc>
+    <lastmod>2022-02-11T22:54:20+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/zip/</loc>
+    <lastmod>2022-02-11T22:54:20+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/posts/20220130_aws-switch-role/</loc>
     <lastmod>2022-01-30T12:48:00+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/tags/hand-on/</loc>
@@ -14,16 +47,7 @@
     <loc>https://naomo.jp/tags/iam/</loc>
     <lastmod>2022-01-30T12:48:00+09:00</lastmod>
   </url><url>
-    <loc>https://naomo.jp/</loc>
-    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
-  </url><url>
-    <loc>https://naomo.jp/posts/</loc>
-    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
-  </url><url>
     <loc>https://naomo.jp/tags/switchrole/</loc>
-    <lastmod>2022-01-30T12:48:00+09:00</lastmod>
-  </url><url>
-    <loc>https://naomo.jp/tags/</loc>
     <lastmod>2022-01-30T12:48:00+09:00</lastmod>
   </url><url>
     <loc>https://naomo.jp/posts/20211024_tagbar/</loc>
@@ -55,6 +79,8 @@
   </url><url>
     <loc>https://naomo.jp/tags/diary/</loc>
     <lastmod>2021-02-19T21:29:01+09:00</lastmod>
+  </url><url>
+    <loc>https://naomo.jp/tags/dev/random/</loc>
   </url><url>
     <loc>https://naomo.jp/categories/</loc>
   </url>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>[AWS] Comparess and extract files on S3 with one-line commands</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://naomo.jp/index.xml"
+  title="naomo"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[AWS] Comparess and extract files on S3 with one-line commands"/>
+<meta name="twitter:description" content="What this post tells about How to compress and extract .zip on S3 with one-line command.
+Environment system_profiler SPSoftwareDataType | head -n 6 | tail -n 2 # System Version: macOS 11."/>
+
+
+
+<link rel="stylesheet" href="https://naomo.jp/fontawesome/css/all.min.css" />
+
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>
+              [AWS] Comparess and extract files on S3 with one-line commands
+            </h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <h2 id="what-this-post-tells-about">What this post tells about</h2>
+<p>How to compress and extract <code>.zip</code> on S3 with one-line command.</p>
+<h2 id="environment">Environment</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">system_profiler SPSoftwareDataType <span class="p">|</span> head -n <span class="m">6</span> <span class="p">|</span> tail -n <span class="m">2</span>
+<span class="c1">#      System Version: macOS 11.4 (20F71)</span>
+<span class="c1">#      Kernel Version: Darwin 20.5.0</span>
+
+aws --version
+<span class="c1"># aws-cli/2.4.18 Python/3.9.10 Darwin/20.5.0 source/x86_64 prompt/off</span>
+
+zip --version <span class="p">|</span> head -n <span class="m">2</span>
+<span class="c1"># Copyright (c) 1990-2008 Info-ZIP - Type &#39;zip &#34;-L&#34;&#39; for software license.</span>
+<span class="c1"># This is Zip 3.0 (July 5th 2008), by Info-ZIP.</span>
+
+funzip 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> head -n <span class="m">1</span>
+<span class="c1"># fUnZip (filter UnZip), version 3.95 of 20 January 2009</span>
+</code></pre></div><h2 id="command">Command</h2>
+<p>.zip (compress)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">aws s3 cp &lt;s3uri&gt; - <span class="p">|</span> zip -r - - <span class="p">|</span> aws s3 cp - &lt;s3uri&gt;
+</code></pre></div><p>.zip (extract)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">aws s3 cp &lt;s3uri&gt; - <span class="p">|</span> funzip <span class="p">|</span> aws s3 cp - &lt;s3uri&gt;
+</code></pre></div><h2 id="hands-on">Hands-on</h2>
+<p>Setup</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">base64 /dev/random <span class="p">|</span> fold -w <span class="m">80</span> <span class="p">|</span> head -c <span class="m">1024</span> &gt; <span class="m">1024</span>
+
+zip -r 1024.zip <span class="m">1024</span>
+<span class="c1"># updating: 1024 (deflated 21%)</span>
+
+aws s3 cp <span class="m">1024</span> s3://naomo-static/
+<span class="c1"># upload: ./1024 to s3://naomo-static/1024.zip</span>
+
+aws s3 ls s3://naomo-static
+<span class="c1"># 2022-02-12 02:15:11       1024 1024</span>
+</code></pre></div><p>Compress</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">aws s3 cp s3://naomo-static/1024 - <span class="p">|</span> zip -r - - <span class="p">|</span> aws s3 cp - s3://naomo-static/1024.zip
+</code></pre></div><ul>
+<li>Note that <code>unzip</code> cannot recieve <code>/dev/stdin</code> nor <code>jar</code> cannot output for <code>/dev/stdout</code>.</li>
+</ul>
+<p>Verify</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">aws s3 cp s3://naomo-static/1024.zip - <span class="p">|</span> funzip <span class="p">|</span> diff - <span class="m">1024</span>
+</code></pre></div><h2 id="final-notes">Final notes</h2>
+<ul>
+<li>The code example of the case of bzip2 is described in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html">official document</a>.</li>
+<li><code>unzip</code> is famous as a tool for extracting zip files, but at the time of current version (UnZip 6.00 of 20 April 2009, by Info-ZIP) unzip does not respond to the receipt of /dev/stdin. Therefore, the above uses <code>funzip</code>.
+<blockquote>
+<p>Archives read from standard input are not  yet  supported, except  with funzip (and then only the first member of the archive can be extracted). &ndash; <a href="https://opensource.apple.com/source/zip/zip-6/unzip/unzip/unzip.txt.auto.html">unzip.txt</a></p>
+</blockquote>
+</li>
+<li>Similarly, zip can be extracted with the <code>jar</code> command. Unlike <code>unzip</code>, <code>jar</code> can receive the input from <code>/dev/stdin</code>. However, it can not output to <code>/dev/stdout</code>.</li>
+</ul>
+
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://naomo.jp/tags/aws/"
+              >aws</a
+            >&nbsp;
+          
+            <a
+              href="https://naomo.jp/tags/s3/"
+              >s3</a
+            >&nbsp;
+          
+            <a
+              href="https://naomo.jp/tags/zip/"
+              >zip</a
+            >&nbsp;
+          
+            <a
+              href="https://naomo.jp/tags/funzip/"
+              >funzip</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="/tags" name="Tags">
+        <em class="fas fa-tag fa-lg"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://twitter.com/_naomo" name="twitter">
+        <em class="fab fa-twitter-square fa-lg"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://naomo.jp/about">Kanta Kurazumi</a>
+      &nbsp;&copy;
+      2022
+      
+        &nbsp;/&nbsp;
+        <a href="https://naomo.jp/">naomo</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

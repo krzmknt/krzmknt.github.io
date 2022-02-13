@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>s3 on naomo</title>
+		<link>https://naomo.jp/tags/s3/</link>
+		<description>Recent content in s3 </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/s3) (Kanta Kurazumi)</managingEditor>
+    	
+  		<lastBuildDate>Fri, 11 Feb 2022 22:54:20 +0900</lastBuildDate>
+		
+		<atom:link href="/tags/s3/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>

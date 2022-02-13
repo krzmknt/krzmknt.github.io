@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>fold on naomo</title>
+		<link>https://naomo.jp/tags/fold/</link>
+		<description>Recent content in fold </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/fold) (Kanta Kurazumi)</managingEditor>
+    	
+  		<lastBuildDate>Sat, 12 Feb 2022 01:54:21 +0900</lastBuildDate>
+		
+		<atom:link href="/tags/fold/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>

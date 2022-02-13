@@ -1,0 +1,15 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>/dev/random on naomo</title>
+		<link>https://naomo.jp/tags/dev/random/</link>
+		<description>Recent content in /dev/random </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/dev/random) (Kanta Kurazumi)</managingEditor>
+    	
+		<atom:link href="/tags/dev/random/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>
